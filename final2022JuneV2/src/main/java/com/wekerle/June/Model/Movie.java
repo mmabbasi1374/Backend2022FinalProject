@@ -28,8 +28,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Movie.findById", query = "SELECT m FROM Movie m WHERE m.id = :id"),
     @NamedQuery(name = "Movie.findByTitle", query = "SELECT m FROM Movie m WHERE m.title = :title"),
     @NamedQuery(name = "Movie.findByLength", query = "SELECT m FROM Movie m WHERE m.length = :length"),
-    @NamedQuery(name = "Movie.findByAgeLimite", query = "SELECT m FROM Movie m WHERE m.ageLimite = :ageLimite"),
-    @NamedQuery(name = "Movie.findByDirectore", query = "SELECT m FROM Movie m WHERE m.directore = :directore")})
+    @NamedQuery(name = "Movie.findByAgeLimit", query = "SELECT m FROM Movie m WHERE m.ageLimit = :ageLimit"),
+    @NamedQuery(name = "Movie.findByDirector", query = "SELECT m FROM Movie m WHERE m.director = :director")})
 public class Movie implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -45,11 +45,11 @@ public class Movie implements Serializable {
     @Column(name = "length")
     private int length;
     @Basic(optional = false)
-    @Column(name = "age-limite")
-    private int ageLimite;
+    @Column(name = "age-limit")
+    private int ageLimit;
     @Basic(optional = false)
-    @Column(name = "directore")
-    private String directore;
+    @Column(name = "director")
+    private String director;
 
     public Movie() {
     }
@@ -58,12 +58,12 @@ public class Movie implements Serializable {
         this.id = id;
     }
 
-    public Movie(Integer id, String title, int length, int ageLimite, String directore) {
+    public Movie(Integer id, String title, int length, int ageLimit, String director) {
         this.id = id;
         this.title = title;
         this.length = length;
-        this.ageLimite = ageLimite;
-        this.directore = directore;
+        this.ageLimit = ageLimit;
+        this.director = director;
     }
 
     public Integer getId() {
@@ -90,20 +90,20 @@ public class Movie implements Serializable {
         this.length = length;
     }
 
-    public int getAgeLimite() {
-        return ageLimite;
+    public int getAgeLimit() {
+        return ageLimit;
     }
 
-    public void setAgeLimite(int ageLimite) {
-        this.ageLimite = ageLimite;
+    public void setAgeLimit(int ageLimit) {
+        this.ageLimit = ageLimit;
     }
 
-    public String getDirectore() {
-        return directore;
+    public String getDirector() {
+        return director;
     }
 
-    public void setDirectore(String directore) {
-        this.directore = directore;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
     @Override

@@ -22,16 +22,16 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author parsarayaneh
  */
 @Entity
-@Table(name = "usercinema")
+@Table(name = "user")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Usercinema.findAll", query = "SELECT u FROM Usercinema u"),
-    @NamedQuery(name = "Usercinema.findById", query = "SELECT u FROM Usercinema u WHERE u.id = :id"),
-    @NamedQuery(name = "Usercinema.findByEmail", query = "SELECT u FROM Usercinema u WHERE u.email = :email"),
-    @NamedQuery(name = "Usercinema.findByFirstName", query = "SELECT u FROM Usercinema u WHERE u.firstName = :firstName"),
-    @NamedQuery(name = "Usercinema.findByLastName", query = "SELECT u FROM Usercinema u WHERE u.lastName = :lastName"),
-    @NamedQuery(name = "Usercinema.findByPhone", query = "SELECT u FROM Usercinema u WHERE u.phone = :phone")})
-public class Usercinema implements Serializable {
+    @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
+    @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id"),
+    @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
+    @NamedQuery(name = "User.findByFirstName", query = "SELECT u FROM User u WHERE u.firstName = :firstName"),
+    @NamedQuery(name = "User.findByLastName", query = "SELECT u FROM User u WHERE u.lastName = :lastName"),
+    @NamedQuery(name = "User.findByPhone", query = "SELECT u FROM User u WHERE u.phone = :phone")})
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -56,14 +56,14 @@ public class Usercinema implements Serializable {
     @Column(name = "phone")
     private int phone;
 
-    public Usercinema() {
+    public User() {
     }
 
-    public Usercinema(Integer id) {
+    public User(Integer id) {
         this.id = id;
     }
 
-    public Usercinema(Integer id, String email, String firstName, String lastName, String password, int phone) {
+    public User(Integer id, String email, String firstName, String lastName, String password, int phone) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -130,10 +130,10 @@ public class Usercinema implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Usercinema)) {
+        if (!(object instanceof User)) {
             return false;
         }
-        Usercinema other = (Usercinema) object;
+        User other = (User) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -142,7 +142,7 @@ public class Usercinema implements Serializable {
 
     @Override
     public String toString() {
-        return "com.wekerle.June.Model.Usercinema[ id=" + id + " ]";
+        return "com.wekerle.June.Model.User[ id=" + id + " ]";
     }
     
 }
