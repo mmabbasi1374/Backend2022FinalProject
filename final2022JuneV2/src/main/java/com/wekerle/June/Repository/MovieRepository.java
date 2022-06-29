@@ -4,10 +4,11 @@
  */
 package com.wekerle.June.Repository;
 
-/**
- *
- * @author parsarayaneh
- */
-public interface MovieRepository {
+import com.wekerle.June.Model.Movie;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface MovieRepository extends JpaRepository<Movie,Integer> {
     
 }
