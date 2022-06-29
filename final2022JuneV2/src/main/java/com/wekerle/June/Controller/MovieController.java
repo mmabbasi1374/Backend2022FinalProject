@@ -9,15 +9,20 @@ import com.wekerle.June.Service.MovieService;
 import io.swagger.models.Model;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MovieController {
-        private final MovieService serv;
+    private final MovieService serv;
 
     public MovieController(MovieService serv) {
         this.serv = serv;
     }
- 
+      @PostMapping(value = "/addNewMovie")
+    public Movie addGenerated(@RequestBody Movie m){
+        return serv.addNewMovie(title, Integer.SIZE, Integer.SIZE, director);
+    }
 }

@@ -29,6 +29,7 @@ public class UserService {
     }
     
     public User addNewUser(User user){
+        
         return this.repo.save(user);
         
     }
@@ -55,7 +56,7 @@ public class UserService {
         
         spq.execute();
         
-        return "ypu wrote your phone";
+        return "you wrote your phone";
     }
     
     

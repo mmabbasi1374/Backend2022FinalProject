@@ -23,7 +23,7 @@ public class MovieService {
     public MovieService(MovieRepository repo) {
         this.repo = repo;
     }
-    
+
     public Boolean addNewMovie(String title, Integer length, Integer age, String director){
         try{
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("addNewMovie");
