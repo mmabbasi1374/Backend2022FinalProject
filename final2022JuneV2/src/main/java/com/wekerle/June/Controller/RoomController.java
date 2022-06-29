@@ -4,10 +4,16 @@
  */
 package com.wekerle.June.Controller;
 
-/**
- *
- * @author parsarayaneh
- */
+import com.wekerle.June.Service.RoomService;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class RoomController {
-    
+        private final RoomService serv;
+
+    public RoomController(RoomService serv) {
+        this.serv = serv;
+    }
+        
+
 }

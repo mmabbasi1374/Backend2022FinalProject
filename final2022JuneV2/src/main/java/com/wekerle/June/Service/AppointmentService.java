@@ -4,10 +4,20 @@
  */
 package com.wekerle.June.Service;
 
-/**
- *
- * @author parsarayaneh
- */
+import com.wekerle.June.Repository.AppointmentRepository;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Service;
+
+@Service
 public class AppointmentService {
+    private final AppointmentRepository repo;
+    @PersistenceContext
+    private EntityManager em;
+
+    public AppointmentService(AppointmentRepository repo) {
+        this.repo = repo;
+    }
+    
     
 }

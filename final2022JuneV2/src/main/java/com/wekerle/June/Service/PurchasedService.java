@@ -4,10 +4,20 @@
  */
 package com.wekerle.June.Service;
 
-/**
- *
- * @author parsarayaneh
- */
+import com.wekerle.June.Repository.PurchasedRepository;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Service;
+
+@Service
 public class PurchasedService {
+    private final PurchasedRepository repo;
+    @PersistenceContext
+    private EntityManager em;
+
+    public PurchasedService(PurchasedRepository repo) {
+        this.repo = repo;
+    }
+
     
 }

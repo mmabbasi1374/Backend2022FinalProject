@@ -4,10 +4,20 @@
  */
 package com.wekerle.June.Service;
 
-/**
- *
- * @author parsarayaneh
- */
+import com.wekerle.June.Repository.RoomRepository;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Service;
+
+@Service
 public class RoomService {
+    private final RoomRepository repo;
+    @PersistenceContext
+    private EntityManager em;
+
+    public RoomService(RoomRepository repo) {
+        this.repo = repo;
+    }
+
     
 }

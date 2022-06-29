@@ -4,10 +4,15 @@
  */
 package com.wekerle.June.Controller;
 
-/**
- *
- * @author parsarayaneh
- */
+import com.wekerle.June.Service.PurchasedService;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class PurchasedController {
-    
+        private final PurchasedService serv;
+
+    public PurchasedController(PurchasedService serv) {
+        this.serv = serv;
+    }
+
 }
